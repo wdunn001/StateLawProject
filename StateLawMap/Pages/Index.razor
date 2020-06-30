@@ -1,0 +1,19 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime;
+<h1>Hello, world!</h1>
+
+Welcome to the State Law Map
+
+<div id="Map-Container" style="position: relative; width: 747px; height: 757px; padding: 0px; margin: 0px; border-width: 0px; cursor: pointer;"></div>
+
+@code {
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            JSRuntime.InvokeVoidAsync("initMap");
+
+        }
+    }
+}
